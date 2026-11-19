@@ -1,0 +1,36 @@
+PACKET TRACER 9.0 - PORT CONNECTION MAP
+=======================================
+
+CORE TO CORE
+CORE1 Fa0/1 <--> CORE2 Fa0/1
+
+CORE1 TO DISTRIBUTION
+CORE1 Fa0/2 <--> DSW1 Fa0/1
+CORE1 Fa0/3 <--> DSW2 Fa0/1
+CORE1 Fa0/4 <--> DSW3 Fa0/1
+CORE1 Fa0/5 <--> DSW4 Fa0/1
+
+CORE2 TO DISTRIBUTION
+CORE2 Fa0/2 <--> DSW1 Fa0/2
+CORE2 Fa0/3 <--> DSW2 Fa0/2
+CORE2 Fa0/4 <--> DSW3 Fa0/2
+CORE2 Fa0/5 <--> DSW4 Fa0/2
+
+DISTRIBUTION TO ACCESS
+DSW1 Fa0/3 <--> ASW1 Fa0/23
+DSW2 Fa0/3 <--> ASW1 Fa0/24
+DSW1 Fa0/4 <--> ASW2 Fa0/23
+DSW2 Fa0/4 <--> ASW2 Fa0/24
+
+DSW3 Fa0/3 <--> ASW3 Fa0/23
+DSW4 Fa0/3 <--> ASW3 Fa0/24
+DSW3 Fa0/4 <--> ASW4 Fa0/23
+DSW4 Fa0/4 <--> ASW4 Fa0/24
+
+END DEVICES - REPEAT ON EACH ACCESS SWITCH
+ASW Fa0/1 <--> PC 1 FastEthernet0
+ASW Fa0/2 <--> PC 2 FastEthernet0
+ASW Fa0/3 <--> Printer FastEthernet0
+
+No distribution-to-distribution links are included. The reference image shows
+two core, four distribution and four access switches, with dual uplinks.
